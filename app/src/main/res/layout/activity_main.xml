@@ -6,21 +6,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="25dp"
     tools:context=".MainActivity">
 
     <EditText
+        android:layout_marginTop="25dp"
         android:id="@+id/edit_text_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Entered your Text"
-        android:inputType="textMultiLine"/>
+        android:layout_height="48dp"
+        android:hint="Your Data"
+        android:textSize="18sp"
+        android:inputType="textMultiLine"
+        tools:ignore="HardcodedText" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save Data"
         android:id="@+id/btn"
-        />
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Second Activity"
+        android:id="@+id/btn2"
+        tools:ignore="HardcodedText" />
+
 
 
 </LinearLayout>

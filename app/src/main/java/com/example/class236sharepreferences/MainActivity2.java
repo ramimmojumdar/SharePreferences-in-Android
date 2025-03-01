@@ -1,6 +1,9 @@
 package com.example.class236sharepreferences;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
+
+
+    TextView text_id;
+
+    SharedPreferences sharedPreferences;
+
+    Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +30,21 @@ public class MainActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //===============================
+
+        text_id = findViewById(R.id.text_id);
+        btnBack = findViewById(R.id.btnBack);
+
+        sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
+
+        String text = sharedPreferences.getString("text", "");
+        text_id.setText(text);
+
+        btnBack.setOnClickListener(v -> {
+            finish();
+        });
+
+
     }
 }
